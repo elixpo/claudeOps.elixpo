@@ -31,6 +31,6 @@
   },
   "homepage": "https://github.com/elixpo/claudeops",
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   }
 }
