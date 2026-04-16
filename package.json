@@ -23,7 +23,7 @@
     "token-savings",
     "devtools"
   ],
-  "author": "Elixpo <ayushbhatt633@gmail.com>",
+  "author" : "Ayushman Bhattacharya <ayushman@myceli.ai>",
   "license": "MIT",
   "repository": {
     "type": "git",
