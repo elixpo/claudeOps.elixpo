@@ -6,8 +6,8 @@
     Drop-in agents, automatic token compression, safety hooks, and a UI design pipeline — one command to install.
   </p>
   <p align="center">
-    <a href="https://www.npmjs.com/package/@elixpo/claudeOps.elixpo"><img src="https://img.shields.io/npm/v/@elixpo/claudeOps.elixpo?style=flat-square&color=cb3837" alt="npm"></a>
-    <a href="https://www.npmjs.com/package/@elixpo/claudeOps.elixpo"><img src="https://img.shields.io/npm/dm/@elixpo/claudeOps.elixpo?style=flat-square" alt="Downloads"></a>
+    <a href="https://www.npmjs.com/package/@elixpo/claudeops"><img src="https://img.shields.io/npm/v/@elixpo/claudeops?style=flat-square&color=cb3837" alt="npm"></a>
+    <a href="https://www.npmjs.com/package/@elixpo/claudeops"><img src="https://img.shields.io/npm/dm/@elixpo/claudeops?style=flat-square" alt="Downloads"></a>
     <a href="https://github.com/elixpo/claudeOps.elixpo/stargazers"><img src="https://img.shields.io/github/stars/elixpo/claudeOps.elixpo?style=flat-square&color=gold" alt="Stars"></a>
     <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue?style=flat-square" alt="License"></a>
     <img src="https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey?style=flat-square" alt="Platform">
@@ -34,22 +34,22 @@ ClaudeOps fixes that. It's a set of config files, agents, and hooks that drop in
 ## Quick Start
 
 ```bash
-npx @elixpo/claudeOps.elixpo init
+npx @elixpo/claudeops init
 ```
 
 That's it. The installer walks you through each component — nothing gets installed without your say-so.
 
 **Other commands:**
 ```bash
-npx @elixpo/claudeOps.elixpo status    # see what's installed
-npx @elixpo/claudeOps.elixpo remove    # clean uninstall
+npx @elixpo/claudeops status    # see what's installed
+npx @elixpo/claudeops remove    # clean uninstall
 ```
 
 **Flags:**
 ```bash
-npx @elixpo/claudeOps.elixpo init --yes          # skip all prompts, install everything
-npx @elixpo/claudeOps.elixpo init --agents-only  # only install the 15 agents
-npx @elixpo/claudeOps.elixpo init --no-mcp       # skip MCP server setup
+npx @elixpo/claudeops init --yes          # skip all prompts, install everything
+npx @elixpo/claudeops init --agents-only  # only install the 15 agents
+npx @elixpo/claudeops init --no-mcp       # skip MCP server setup
 ```
 
 ---
@@ -157,7 +157,7 @@ The approach is simple: use Claude Code's own extension points (agents, hooks, M
 ## Uninstall
 
 ```bash
-npx @elixpo/claudeOps.elixpo remove
+npx @elixpo/claudeops remove
 ```
 
 Interactively removes agents, hooks, MCP servers, and plugins. Your non-ClaudeOps configuration is preserved.

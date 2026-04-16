@@ -32,25 +32,21 @@ for f in lib/*.js; do
 done
 echo -e "${GREEN}[+]${NC} All JS files valid"
 
-# Get version from package.json
-VERSION=$(node -p "require('./package.json').version")
 NAME=$(node -p "require('./package.json').name")
+
+# ── Bump patch version ────────────────────────────────────
+OLD_VERSION=$(node -p "require('./package.json').version")
+VERSION=$(node -e "
+const fs = require('fs');
+const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+const parts = pkg.version.split('.').map(Number);
+parts[2]++;
+pkg.version = parts.join('.');
+fs.writeFileSync('package.json', JSON.stringify(pkg, null, 2) + '\n');
+console.log(pkg.version);
+")
+echo -e "${CYAN}[*]${NC} Version bump: ${OLD_VERSION} → ${VERSION}"
 echo -e "${CYAN}[*]${NC} Package: ${NAME}@${VERSION}"
-
-# Check for uncommitted changes
-if [ -n "$(git status --porcelain)" ]; then
-  echo -e "${YELLOW}[!]${NC} Uncommitted changes detected"
-  echo -ne "${CYAN}[?]${NC} Continue anyway? (y/n): "
-  read -r ans
-  [[ "$ans" =~ ^[Yy] ]] || exit 0
-fi
-
-# Check if version already published
-if npm view "${NAME}@${VERSION}" version 2>/dev/null; then
-  echo -e "${RED}[-]${NC} ${NAME}@${VERSION} already published"
-  echo -e "${YELLOW}[!]${NC} Bump version in package.json first"
-  exit 1
-fi
 
 # ── Publish ───────────────────────────────────────────────
 echo ""
@@ -61,16 +57,19 @@ npm publish --access public --registry https://registry.npmjs.org/ --//registry.
 echo ""
 echo -e "${GREEN}[+]${NC} Published ${NAME}@${VERSION}"
 echo -e "${CYAN}[*]${NC} https://www.npmjs.com/package/${NAME}"
-echo ""
 
-# ── Tag the release ───────────────────────────────────────
-if ! git tag -l "v${VERSION}" | grep -q .; then
-  git tag "v${VERSION}"
-  echo -e "${GREEN}[+]${NC} Tagged v${VERSION}"
-  echo -ne "${CYAN}[?]${NC} Push tag to remote? (y/n): "
-  read -r ans
-  if [[ "$ans" =~ ^[Yy] ]]; then
-    git push origin "v${VERSION}"
-    echo -e "${GREEN}[+]${NC} Pushed tag v${VERSION}"
-  fi
+# ── Commit version bump + tag ─────────────────────────────
+echo ""
+git add package.json
+git commit -m "chore: bump version to ${VERSION}"
+git tag "v${VERSION}"
+echo -e "${GREEN}[+]${NC} Committed and tagged v${VERSION}"
+
+echo -ne "${CYAN}[?]${NC} Push commit + tag to remote? (y/n): "
+read -r ans
+if [[ "$ans" =~ ^[Yy] ]]; then
+  git push && git push origin "v${VERSION}"
+  echo -e "${GREEN}[+]${NC} Pushed to remote"
 fi
+
+echo ""
