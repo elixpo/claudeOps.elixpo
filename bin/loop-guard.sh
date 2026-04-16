@@ -6,6 +6,7 @@ set -euo pipefail
 INPUT=$(cat)
 TOOL_NAME=$(echo "$INPUT" | python3 -c "import sys,json; print(json.load(sys.stdin).get('tool_name',''))" 2>/dev/null || echo "")
 EXIT_CODE=$(echo "$INPUT" | python3 -c "import sys,json; print(json.load(sys.stdin).get('tool_result',{}).get('exit_code',0))" 2>/dev/null || echo "0")
+SESSION_ID=$(echo "$INPUT" | python3 -c "import sys,json; print(json.load(sys.stdin).get('session_id','default'))" 2>/dev/null || echo "default")
 
 # Only track non-zero exits
 [[ "$EXIT_CODE" == "0" || -z "$TOOL_NAME" ]] && exit 0
@@ -20,7 +21,7 @@ print(s)
 " 2>/dev/null || echo "")
 
 HASH=$(printf '%s|%s' "$TOOL_NAME" "$SNIPPET" | cksum | cut -d' ' -f1)
-LOGFILE="${TMPDIR:-/tmp}/claude_loop_guard.log"
+LOGFILE="${TMPDIR:-/tmp}/claude_loop_guard_${SESSION_ID}.log"
 
 touch "$LOGFILE"
 echo "$HASH" >> "$LOGFILE"
