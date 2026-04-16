@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="public/logo.png" alt="ClaudeOps" width="120" />
+  <img src="https://raw.githubusercontent.com/elixpo/claudeOps.elixpo/main/public/logo.png" alt="ClaudeOps" width="120" />
   <h1 align="center">ClaudeOps</h1>
   <p align="center">
     <strong>Make Claude Code actually work like a senior engineer.</strong><br/>
@@ -25,7 +25,7 @@ ClaudeOps fixes that. It's a set of config files, agents, and hooks that drop in
 ---
 
 <p align="center">
-  <img src="public/banner.png" alt="ClaudeOps" width="100%" />
+  <img src="https://raw.githubusercontent.com/elixpo/claudeOps.elixpo/main/public/banner.png" alt="ClaudeOps" width="100%" />
 </p>
 
 --- 
