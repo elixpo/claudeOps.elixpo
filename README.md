@@ -172,11 +172,14 @@ PRs welcome. Areas where help is needed:
 - Benchmarks comparing with/without ClaudeOps
 - Platform-specific install improvements
 
+<br>
 
+--- 
 
 <p align="center">
-  Built and maintained by <a href="https://github.com/elixpo">@elixpo</a>
+  Built with ❤️ and maintained by <a href="https://github.com/elixpo">@elixpo</a>
 </p>
+
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/elixpo/claudeOps.elixpo/output/github-contribution-grid-snake-dark.svg" />
