@@ -1,5 +1,5 @@
 ---
-name: multi-perspective-reviewer
+name: prism
 description: Parallel bias-isolated review with 4 specialized single-domain reviewers (security, performance, test coverage, correctness). Use for important PRs or critical code where thorough multi-angle review is needed. Each perspective has blinders — forces deeper analysis per domain.
 tools: Read, Grep, Glob, Bash
 model: sonnet

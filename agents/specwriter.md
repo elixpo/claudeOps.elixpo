@@ -1,5 +1,5 @@
 ---
-name: spec-interviewer
+name: specwriter
 description: Pre-implementation requirements interviewer. Use BEFORE any non-trivial feature, refactor, or new project. Reads the codebase, asks 20-40 probing questions in structured rounds, and produces a bulletproof SPEC.md with testable acceptance criteria, exact files to modify, and a wiring checklist. Never writes implementation code.
 tools: Read, Grep, Glob, Bash
 model: sonnet

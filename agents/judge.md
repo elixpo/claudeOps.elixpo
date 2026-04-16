@@ -1,5 +1,5 @@
 ---
-name: ensemble-judge
+name: judge
 description: Evaluates multiple competing solutions and selects the best one. Use after parallel worktree racing or when multiple approaches exist. Judges on correctness, complexity, testability, and maintainability.
 tools: Read, Grep, Glob, Bash
 model: opus

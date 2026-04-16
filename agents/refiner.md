@@ -1,5 +1,5 @@
 ---
-name: constitutional-reviewer
+name: refiner
 description: Multi-pass self-review that forces write-critique-rewrite-verify cycle. Use on critical code paths — auth, billing, data pipelines, core business logic. Catches issues single-pass review misses. Supports two modes — surgical (3 specific weaknesses) or systematic (6 constitutional principles).
 tools: Read, Edit, Write, Grep, Glob, Bash
 model: opus

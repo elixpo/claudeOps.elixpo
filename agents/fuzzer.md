@@ -1,5 +1,5 @@
 ---
-name: hypothesis-tester
+name: fuzzer
 description: Generates property-based tests that find edge cases humans miss. Use for pure functions, parsers, serializers, data transformations, and any code where input space is large.
 tools: Read, Write, Edit, Bash, Grep, Glob
 model: sonnet

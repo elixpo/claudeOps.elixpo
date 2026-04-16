@@ -1,5 +1,5 @@
 ---
-name: tree-of-thought
+name: brancher
 description: Explores multiple solution approaches before committing to one. Use proactively for algorithm selection, data structure choices, or any decision where 3+ fundamentally different approaches exist.
 tools: Read, Grep, Glob, Bash
 model: opus

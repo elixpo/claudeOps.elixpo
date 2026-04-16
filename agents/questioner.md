@@ -1,5 +1,5 @@
 ---
-name: socratic-questioner
+name: questioner
 description: Mandatory pre-implementation interrogation. Use before any non-trivial coding task to surface assumptions, find existing solutions, and prevent over-engineering. Forces 6 critical questions before a single line of code.
 tools: Read, Grep, Glob
 model: sonnet

@@ -1,5 +1,5 @@
 ---
-name: adversarial-coach
+name: breaker
 description: Adversarial code reviewer that tries to break code. Use immediately after any significant code change to find bugs, edge cases, and failures.
 tools: Read, Grep, Glob, Bash
 model: opus

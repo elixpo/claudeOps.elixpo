@@ -1,5 +1,5 @@
 ---
-name: integration-enforcer
+name: wirer
 description: Verifies that new code is actually wired into the running system — not orphaned. Use PROACTIVELY after any implementation to catch dead code, unregistered routes, unrendered components, and disconnected modules. The #1 AI coding failure mode.
 tools: Read, Grep, Glob, Bash
 model: opus

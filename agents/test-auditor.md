@@ -1,5 +1,5 @@
 ---
-name: test-authenticator
+name: test-auditor
 description: Detects fake, theatrical, and meaningless tests. Use PROACTIVELY after test suites are written to catch mock-everything tests, tautological assertions, happy-path-only coverage, and tests that pass but verify nothing. The anti-"test theater" agent.
 tools: Read, Grep, Glob, Bash
 model: sonnet

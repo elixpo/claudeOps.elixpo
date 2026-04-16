@@ -25,10 +25,10 @@ echo ""
 
 # ── Step 1: Remove agents ────────────────────────────────────
 GOD_MODE_AGENTS=(
-  adversarial-coach architect constitutional-reviewer design-critic
-  ensemble-judge hypothesis-tester integration-enforcer
-  multi-perspective-reviewer red-team researcher socratic-questioner
-  spec-interviewer test-authenticator tree-of-thought ui-architect
+  breaker architect refiner design-critic
+  judge fuzzer wirer
+  prism red-team researcher questioner
+  specwriter test-auditor brancher ui-architect
 )
 
 if ask "Remove GodClaude agents from $AGENTS_DIR?"; then
