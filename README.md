@@ -172,12 +172,10 @@ PRs welcome. Areas where help is needed:
 - Benchmarks comparing with/without ClaudeOps
 - Platform-specific install improvements
 
-## License
 
-[MIT](LICENSE)
 
 <p align="center">
-  <sub>Built and maintained by <a href="https://github.com/elixpo">@elixpo</a></sub>
+  Built and maintained by <a href="https://github.com/elixpo">@elixpo</a>
 </p>
 
 <picture>
