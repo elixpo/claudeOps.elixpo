@@ -18,7 +18,7 @@ AGENTS_DIR="$CLAUDE_DIR/agents"
 echo ""
 echo -e "${PURPLE}${BOLD}"
 echo "  ============================================"
-echo "        GodClaude Uninstaller"
+echo "        ClaudeOps Uninstaller"
 echo "  ============================================"
 echo -e "${NC}"
 echo ""
@@ -31,7 +31,7 @@ GOD_MODE_AGENTS=(
   specwriter test-auditor brancher ui-architect
 )
 
-if ask "Remove GodClaude agents from $AGENTS_DIR?"; then
+if ask "Remove ClaudeOps agents from $AGENTS_DIR?"; then
   count=0
   for agent in "${GOD_MODE_AGENTS[@]}"; do
     if [ -f "$AGENTS_DIR/${agent}.md" ]; then
@@ -45,7 +45,7 @@ else
 fi
 
 # ── Step 2: Restore CLAUDE.md backup ─────────────────────────
-if ask "Remove GodClaude CLAUDE.md?"; then
+if ask "Remove ClaudeOps CLAUDE.md?"; then
   BACKUP=$(ls -t "$CLAUDE_DIR"/CLAUDE.md.backup-* 2>/dev/null | head -1 || echo "")
   if [ -n "$BACKUP" ]; then
     cp "$BACKUP" "$CLAUDE_DIR/CLAUDE.md"
@@ -64,7 +64,7 @@ BIN_SCRIPTS=(
   session-handover.sh session-resume.sh auto-onboard.sh
 )
 
-if ask "Remove GodClaude bin scripts from $CLAUDE_DIR/bin/?"; then
+if ask "Remove ClaudeOps bin scripts from $CLAUDE_DIR/bin/?"; then
   count=0
   for script in "${BIN_SCRIPTS[@]}"; do
     if [ -f "$CLAUDE_DIR/bin/$script" ]; then
@@ -82,7 +82,7 @@ HOOK_SCRIPTS=(
   serena-grep-guard.js serena-glob-guard.js serena-bash-guard.js
 )
 
-if ask "Remove GodClaude hook scripts from $CLAUDE_DIR/hooks/?"; then
+if ask "Remove ClaudeOps hook scripts from $CLAUDE_DIR/hooks/?"; then
   count=0
   for script in "${HOOK_SCRIPTS[@]}"; do
     if [ -f "$CLAUDE_DIR/hooks/$script" ]; then
@@ -96,7 +96,7 @@ else
 fi
 
 # ── Step 5: Clean hooks from settings.json ───────────────────
-if ask "Remove GodClaude hooks from settings.json? (will preserve non-God-Mode hooks)"; then
+if ask "Remove ClaudeOps hooks from settings.json? (will preserve non-God-Mode hooks)"; then
   python3 -c "
 import json, os
 
@@ -112,7 +112,7 @@ if 'hooks' not in settings:
     print('  [*] No hooks found in settings.json')
     exit(0)
 
-# GodClaude hook signatures to identify and remove
+# ClaudeOps hook signatures to identify and remove
 god_mode_signatures = [
     'serena-grep-guard', 'serena-glob-guard', 'serena-bash-guard',
     'check-orphan.sh', 'require-connected-code.sh', 'loop-guard.sh',
@@ -145,7 +145,7 @@ if not settings['hooks']:
 
 with open(path, 'w') as f:
     json.dump(settings, f, indent=2)
-print(f'  [+] Removed {removed} GodClaude hook entries from settings.json')
+print(f'  [+] Removed {removed} ClaudeOps hook entries from settings.json')
 " 2>/dev/null || warn "Could not clean hooks from settings.json — edit manually"
 else
   info "Skipping hooks cleanup"
@@ -157,7 +157,7 @@ GOD_MODE_MCPS=(
   animotion aceternity dembrandt glance
 )
 
-if ask "Remove GodClaude MCP servers from ~/.claude.json?"; then
+if ask "Remove ClaudeOps MCP servers from ~/.claude.json?"; then
   python3 -c "
 import json, os
 

@@ -21,14 +21,14 @@ if [ -d "$(dirname "$0")/agents" ]; then
   REPO_DIR="$(cd "$(dirname "$0")" && pwd)"
 else
   REPO_DIR="$(mktemp -d)"
-  info "Downloading godclaude.elixpo..."
-  git clone --depth 1 https://github.com/elixpo/godclaude.elixpo.git "$REPO_DIR" 2>&1 | tail -1
+  info "Downloading claudeops..."
+  git clone --depth 1 https://github.com/elixpo/claudeops.git "$REPO_DIR" 2>&1 | tail -1
 fi
 
 echo ""
 echo -e "${PURPLE}${BOLD}"
 echo "  ============================================"
-echo "          GodClaude Installer"
+echo "          ClaudeOps Installer"
 echo "  ============================================"
 echo -e "${NC}"
 echo -e "  ${CYAN}15 agents | autonomous token pipeline | 60-99% savings${NC}"
@@ -388,5 +388,5 @@ echo -e "       - everything-claude-code (affaan-m)"
 echo -e "    ${YELLOW}3.${NC} In any project: say 'index this project' to build the code graph"
 echo -e "    ${YELLOW}4.${NC} Copy .claudeignore template to your project roots"
 echo ""
-echo -e "  ${PURPLE}If this helped, star the repo: https://github.com/elixpo/godclaude.elixpo${NC}"
+echo -e "  ${PURPLE}If this helped, star the repo: https://github.com/elixpo/claudeops${NC}"
 echo ""

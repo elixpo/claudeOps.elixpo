@@ -1,5 +1,5 @@
 <p align="center">
-  <h1 align="center">GodClaude</h1>
+  <h1 align="center">ClaudeOps</h1>
   <p align="center">
     <strong>Get more out of every Claude Code session.</strong><br/>
     15 specialized agents, automatic token savings, smarter safety hooks, and a UI design pipeline — all drop-in.
@@ -7,7 +7,7 @@
   <p align="center">
     <a href="#quick-start"><img src="https://img.shields.io/badge/setup-2%20minutes-brightgreen?style=flat-square" alt="Setup Time"></a>
     <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue?style=flat-square" alt="License"></a>
-    <a href="https://github.com/elixpo/godclaude.elixpo/stargazers"><img src="https://img.shields.io/github/stars/elixpo/godclaude.elixpo?style=flat-square&color=gold" alt="Stars"></a>
+    <a href="https://github.com/elixpo/claudeops/stargazers"><img src="https://img.shields.io/github/stars/elixpo/claudeops?style=flat-square&color=gold" alt="Stars"></a>
     <img src="https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey?style=flat-square" alt="Platform">
   </p>
 </p>
@@ -18,7 +18,7 @@
 
 Claude Code is powerful, but out of the box it burns through tokens reading things it doesn't need, skips code review, writes orphan files nobody calls, and produces generic-looking UIs. You end up babysitting it.
 
-GodClaude fixes that. It's a set of config files, agents, and hooks that drop into your Claude Code setup and make it work the way you'd expect a senior engineer to work — research before coding, review before merging, prove things work before saying "done."
+ClaudeOps fixes that. It's a set of config files, agents, and hooks that drop into your Claude Code setup and make it work the way you'd expect a senior engineer to work — research before coding, review before merging, prove things work before saying "done."
 
 ---
 
@@ -26,13 +26,13 @@ GodClaude fixes that. It's a set of config files, agents, and hooks that drop in
 
 **macOS / Linux:**
 ```bash
-curl -fsSL https://raw.githubusercontent.com/elixpo/godclaude.elixpo/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/elixpo/claudeops/main/install.sh | bash
 ```
 
 **Manual:**
 ```bash
-git clone https://github.com/elixpo/godclaude.elixpo.git
-cd godclaude.elixpo
+git clone https://github.com/elixpo/claudeops.git
+cd claudeops
 bash install.sh
 ```
 
@@ -96,7 +96,7 @@ The installer asks before adding each one. Everything is optional.
 
 ### UI Component Libraries
 
-If you do frontend work, GodClaude connects Claude to real component registries so it fetches production components instead of hallucinating them.
+If you do frontend work, ClaudeOps connects Claude to real component registries so it fetches production components instead of hallucinating them.
 
 | Library | What you get |
 |---------|-------------|
@@ -146,7 +146,7 @@ The approach is simple: use Claude Code's own extension points (agents, hooks, M
 bash uninstall.sh
 ```
 
-The uninstaller interactively removes agents, hooks, MCP servers, and env vars. Your non-GodClaude configuration is preserved.
+The uninstaller interactively removes agents, hooks, MCP servers, and env vars. Your non-ClaudeOps configuration is preserved.
 
 ---
 
@@ -155,7 +155,7 @@ The uninstaller interactively removes agents, hooks, MCP servers, and env vars. 
 PRs welcome. Areas where help is needed:
 
 - New agents for specific domains (ML, mobile, embedded)
-- Benchmarks comparing with/without GodClaude
+- Benchmarks comparing with/without ClaudeOps
 - Platform-specific install improvements
 
 ## License
@@ -167,9 +167,9 @@ PRs welcome. Areas where help is needed:
 </p>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/elixpo/godclaude.elixpo/output/github-contribution-grid-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/elixpo/godclaude.elixpo/output/github-contribution-grid-snake.svg" />
-  <img alt="github-snake" src="https://raw.githubusercontent.com/elixpo/godclaude.elixpo/output/github-contribution-grid-snake-dark.svg" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/elixpo/claudeops/output/github-contribution-grid-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/elixpo/claudeops/output/github-contribution-grid-snake.svg" />
+  <img alt="github-snake" src="https://raw.githubusercontent.com/elixpo/claudeops/output/github-contribution-grid-snake-dark.svg" />
 </picture>
 
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=170&section=footer&animation=twinkling" />
