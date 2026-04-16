@@ -7,6 +7,7 @@
   <p align="center">
     <a href="#quick-start"><img src="https://img.shields.io/badge/setup-2%20minutes-brightgreen?style=flat-square" alt="Setup Time"></a>
     <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue?style=flat-square" alt="License"></a>
+    <a href="https://github.com/elixpo/godclaude.elixpo/stargazers"><img src="https://img.shields.io/github/stars/elixpo/godclaude.elixpo?style=flat-square&color=gold" alt="Stars"></a>
     <img src="https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey?style=flat-square" alt="Platform">
   </p>
 </p>
@@ -48,27 +49,27 @@ The installer walks you through each component — nothing gets installed withou
 **Security & Review**
 | Agent | What it does |
 |-------|-------------|
-| `adversarial-coach` | Tries to break your code. Every issue comes with a concrete exploit, not a vague warning. |
+| `breaker` | Tries to break your code. Every issue comes with a concrete exploit, not a vague warning. |
 | `red-team` | You tell it what security measures you added. It attacks those specific assumptions. |
-| `constitutional-reviewer` | Multi-pass review: write, critique against 6 principles, rewrite, verify. Two modes — quick surgical or full systematic. |
-| `multi-perspective-reviewer` | 4 isolated review passes (security, performance, test coverage, correctness), each with blinders so nothing gets glossed over. |
-| `test-authenticator` | Catches fake tests — mocks that test nothing, assertions that always pass, happy-path-only coverage. |
+| `refiner` | Multi-pass review: write, critique against 6 principles, rewrite, verify. Two modes — quick surgical or full systematic. |
+| `prism` | 4 isolated review passes (security, performance, test coverage, correctness), each with blinders so nothing gets glossed over. |
+| `test-auditor` | Catches fake tests — mocks that test nothing, assertions that always pass, happy-path-only coverage. |
 
 **Planning & Design**
 | Agent | What it does |
 |-------|-------------|
 | `architect` | System design and ADRs. Compares 3+ approaches before recommending. Never writes implementation code. |
-| `tree-of-thought` | Forces exploration of multiple solutions before committing. Won't start coding until all branches are compared. |
-| `socratic-questioner` | 6 mandatory questions before any code. Surfaces hidden assumptions and finds the simplest path. |
-| `spec-interviewer` | Interviews you through 5 rounds of questions, then produces a SPEC.md detailed enough for a fresh session to execute without follow-ups. |
-| `ensemble-judge` | Evaluates competing solutions through binary gates and weighted scoring. Picks a winner, never declares a tie. |
+| `brancher` | Forces exploration of multiple solutions before committing. Won't start coding until all branches are compared. |
+| `questioner` | 6 mandatory questions before any code. Surfaces hidden assumptions and finds the simplest path. |
+| `specwriter` | Interviews you through 5 rounds of questions, then produces a SPEC.md detailed enough for a fresh session to execute without follow-ups. |
+| `judge` | Evaluates competing solutions through binary gates and weighted scoring. Picks a winner, never declares a tie. |
 
 **Research & Integration**
 | Agent | What it does |
 |-------|-------------|
 | `researcher` | 7 depth levels from `surface` (30 seconds) to `overkill` (unlimited). Launches parallel sub-agents at higher levels. |
-| `hypothesis-tester` | Property-based testing across 1000+ random inputs. Finds edge cases humans miss. |
-| `integration-enforcer` | Verifies new code is actually wired into the running system. Catches the #1 AI coding failure: beautiful code that nothing calls. |
+| `fuzzer` | Property-based testing across 1000+ random inputs. Finds edge cases humans miss. |
+| `wirer` | Verifies new code is actually wired into the running system. Catches the #1 AI coding failure: beautiful code that nothing calls. |
 
 **UI & Frontend**
 | Agent | What it does |
@@ -161,6 +162,14 @@ PRs welcome. Areas where help is needed:
 
 [MIT](LICENSE)
 
----
+<p align="center">
+  <sub>Originally created by <a href="https://github.com/Itachi-1824">@Itachi-1824</a>. Maintained and extended by <a href="https://github.com/elixpo">@elixpo</a>.</sub>
+</p>
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/elixpo/godclaude.elixpo/output/github-contribution-grid-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/elixpo/godclaude.elixpo/output/github-contribution-grid-snake.svg" />
+  <img alt="github-snake" src="https://raw.githubusercontent.com/elixpo/godclaude.elixpo/output/github-contribution-grid-snake-dark.svg" />
+</picture>
 
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=170&section=footer&animation=twinkling" />

@@ -143,7 +143,7 @@ Once all rounds are complete, generate the complete spec file. Write it to `SPEC
 
 **Status:** Draft  
 **Created:** [date]  
-**Author:** spec-interviewer agent  
+**Author:** specwriter agent  
 **Complexity:** [Low | Medium | High | XL]
 
 ---
