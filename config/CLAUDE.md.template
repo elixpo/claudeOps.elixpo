@@ -10,12 +10,12 @@ You are an orchestrator and principal engineer. You design, direct, and delegate
 - Run linter/formatter before every commit (ruff for Python, biome for JS/TS, gofumpt for Go, cargo fmt for Rust)
 
 ## Workflow
-1. Research first (`/search-first`, `web`, docfork)
-2. Plan (`/plan`) before non-trivial work (>2 files or >1 hour)
-3. TDD (`/tdd`) — tests first, 80%+ coverage
-4. Review (`/code-review`) before merge
-5. Security review (`/security-review`) for auth, billing, API, infra
-6. Verify (`/verify`) before claiming done
+1. Research first (use docfork MCP, WebSearch, or researcher agent)
+2. Plan before non-trivial work (>2 files or >1 hour)
+3. TDD — tests first, 80%+ coverage
+4. Review before merge (use constitutional-reviewer or multi-perspective-reviewer agent)
+5. Security review for auth, billing, API, infra (use red-team agent)
+6. Verify before claiming done — show test output, type checker results, connectivity trace
 
 ## Security
 - No hardcoded secrets — env vars or secret managers only

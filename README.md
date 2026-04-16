@@ -252,7 +252,7 @@ Prevents Claude from reading `node_modules/`, `dist/`, build artifacts, etc.
 | `loop-guard.sh` | Escalating guidance on 3+ consecutive identical failures |
 | `session-handover.sh` | Auto-writes HANDOVER.md on session end (git state, decisions, next steps) |
 | `session-resume.sh` | Auto-reads HANDOVER.md on session start for continuity |
-| `status-bar.sh` | Context-usage color bar (green &lt;40%, yellow 40-59%, red 60%+) |
+| `auto-onboard.sh` | Auto-indexes new projects on first visit (graphify) |
 
 ### Safety Hooks (Deterministic)
 | Hook | Trigger | Effect |
@@ -272,7 +272,7 @@ Prevents Claude from reading `node_modules/`, `dist/`, build artifacts, etc.
   +-  CLAUDE.md              ~80 lines (lean, connectivity + testing rules)
   +-  settings.json          17 hooks across 8 lifecycle events
   +-  agents/                15 specialized agents (on-demand, 0 tokens when unused)
-  +-  bin/                   6 hook scripts (safety, handover, loop guard)
+  +-  bin/                   5 hook scripts (safety, handover, loop guard)
   +-  skills/                Plugin skills (graphify, caveman, etc.)
   +-  plugins/               11 enabled (LSP, security, design, memory, skills)
   +-  projects/              Per-project memory and config

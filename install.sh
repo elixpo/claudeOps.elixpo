@@ -31,7 +31,7 @@ echo "  ============================================"
 echo "          Claude God Mode Installer"
 echo "  ============================================"
 echo -e "${NC}"
-echo -e "  ${CYAN}11 agents | autonomous token pipeline | 60-99% savings${NC}"
+echo -e "  ${CYAN}15 agents | autonomous token pipeline | 60-99% savings${NC}"
 echo ""
 
 # ── Preflight ──────────────────────────────────────────────
