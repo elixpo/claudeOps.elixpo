@@ -22,13 +22,13 @@ if [ -d "$(dirname "$0")/agents" ]; then
 else
   REPO_DIR="$(mktemp -d)"
   info "Downloading claude-god-mode..."
-  git clone --depth 1 https://github.com/Itachi-1824/claude-god-mode.git "$REPO_DIR" 2>&1 | tail -1
+  git clone --depth 1 https://github.com/elixpo/godclaude.elixpo.git "$REPO_DIR" 2>&1 | tail -1
 fi
 
 echo ""
 echo -e "${PURPLE}${BOLD}"
 echo "  ============================================"
-echo "          Claude God Mode Installer"
+echo "          GodClaude Installer"
 echo "  ============================================"
 echo -e "${NC}"
 echo -e "  ${CYAN}15 agents | autonomous token pipeline | 60-99% savings${NC}"

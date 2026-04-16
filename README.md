@@ -1,323 +1,168 @@
 <p align="center">
-  <h1 align="center">&#x1F451; Claude God Mode</h1>
+  <h1 align="center">GodClaude</h1>
   <p align="center">
-    <strong>The ultimate Claude Code optimization toolkit.</strong><br/>
-    15 AI agents &#x2022; Autonomous token pipeline &#x2022; 60-99% token savings &#x2022; Opus-level reasoning &#x2022; Elite UI design
+    <strong>Get more out of every Claude Code session.</strong><br/>
+    15 specialized agents, automatic token savings, smarter safety hooks, and a UI design pipeline — all drop-in.
   </p>
   <p align="center">
-    <a href="#-quick-start"><img src="https://img.shields.io/badge/setup-2%20minutes-brightgreen?style=flat-square" alt="Setup Time"></a>
+    <a href="#quick-start"><img src="https://img.shields.io/badge/setup-2%20minutes-brightgreen?style=flat-square" alt="Setup Time"></a>
     <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue?style=flat-square" alt="License"></a>
-    <a href="#-token-savings"><img src="https://img.shields.io/badge/token%20savings-60--99%25-orange?style=flat-square" alt="Token Savings"></a>
-    <a href="#-agents"><img src="https://img.shields.io/badge/agents-15-purple?style=flat-square" alt="Agents"></a>
     <img src="https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey?style=flat-square" alt="Platform">
   </p>
 </p>
 
 ---
 
-Stop burning tokens. Start shipping code.
+## The Problem
 
-Claude God Mode is a drop-in optimization toolkit for [Claude Code](https://claude.ai/code) that combines **autonomous token reduction** with **Opus-level reasoning patterns** — giving you 2-10x more usage from your plan while producing higher quality code.
+Claude Code is powerful, but out of the box it burns through tokens reading things it doesn't need, skips code review, writes orphan files nobody calls, and produces generic-looking UIs. You end up babysitting it.
 
-## &#x26A1; What You Get
+GodClaude fixes that. It's a set of config files, agents, and hooks that drop into your Claude Code setup and make it work the way you'd expect a senior engineer to work — research before coding, review before merging, prove things work before saying "done."
 
-### Token Pipeline (Autonomous)
-Every layer runs automatically — no manual intervention after setup.
+---
 
-```
-Your Prompt
-    |
-    +-  [RTK]               Bash output compressed 60-90%
-    |
-    +-  [jCodeMunch]         Lightweight code indexing, 95%+ savings (50-150MB)
-    |
-    +-  [Context Mode]      Tool outputs sandboxed in SQLite (98%)
-    |
-    +-  [MCP Compressor]    JSON/data auto-compressed (25-66%)
-    |
-    +-  [Cozempic]          Context auto-pruned at 4 thresholds
-    |
-    +-  [Headroom]          AST-aware prompt compression (~50%)
-    |
-    v
-Claude sees ONLY what it needs
-```
-
-### Quality Agents (On-Demand)
-15 specialized agents that push Claude's reasoning to its ceiling.
-
-| Agent | What It Does |
-|-------|-------------|
-| &#x1F534; `adversarial-coach` | Tries to **break** your code — finds concrete exploits |
-| &#x1F534; `red-team` | Attacks your **stated security assumptions** |
-| &#x1F7E3; `architect` | System design + ADRs, **never writes code** |
-| &#x1F535; `tree-of-thought` | Explores **3+ approaches** before committing |
-| &#x1F535; `constitutional-reviewer` | Multi-pass: write &#x2192; critique &#x2192; rewrite &#x2192; verify (surgical + systematic modes) |
-| &#x1F7E1; `ensemble-judge` | Picks the **best** from competing solutions |
-| &#x1F7E2; `socratic-questioner` | 6 mandatory questions **before** any code |
-| &#x1F7E2; `hypothesis-tester` | Property-based tests with 1000+ random inputs |
-| &#x1F535; `multi-perspective-reviewer` | 4 isolated passes: security, perf, coverage, correctness |
-| &#x1F7E6; `researcher` | Multi-depth research: `surface` to `overkill` |
-| &#x1F7E2; `spec-interviewer` | Interviews you **before** implementation, produces bulletproof SPEC.md |
-| &#x1F7E3; `ui-architect` | **Auto-triggers on frontend tasks.** Fetches from component libraries, adds animations |
-| &#x1F7E3; `design-critic` | **Auto-critiques UI** after implementation. Scores visual quality 1-10 |
-| &#x1F7E0; `integration-enforcer` | Verifies new code is **actually wired** into the running system |
-| &#x1F7E1; `test-authenticator` | Catches **fake tests** — mock theater, tautologies, happy-path-only |
-
-## &#x1F680; Quick Start
-
-### One-Line Install (Recommended)
+## Quick Start
 
 **macOS / Linux:**
 ```bash
-curl -fsSL https://raw.githubusercontent.com/Itachi-1824/claude-god-mode/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/elixpo/godclaude.elixpo/main/install.sh | bash
 ```
 
-**Windows (PowerShell):**
-```powershell
-irm https://raw.githubusercontent.com/Itachi-1824/claude-god-mode/main/install.ps1 | iex
-```
-
-### Manual Install
-
+**Manual:**
 ```bash
-git clone https://github.com/Itachi-1824/claude-god-mode.git
-cd claude-god-mode
-# Copy agents
-cp agents/*.md ~/.claude/agents/
-# Copy CLAUDE.md template (review and customize first!)
-cp config/CLAUDE.md.template ~/.claude/CLAUDE.md
-# Copy .claudeignore template to your projects
-cp config/.claudeignore.template /path/to/your/project/.claudeignore
+git clone https://github.com/elixpo/godclaude.elixpo.git
+cd godclaude.elixpo
+bash install.sh
 ```
 
-## &#x1F4CA; Token Savings
+The installer walks you through each component — nothing gets installed without your say-so.
 
-Measured savings from real-world usage:
+---
 
-| Layer | Tool | Savings | What It Targets |
-|-------|------|---------|-----------------|
-| CLI Output | [RTK](https://github.com/rtk-ai/rtk) | 60-90% | Bash command output noise |
-| Code Navigation | [jCodeMunch](https://github.com/jgravelle/jcodemunch-mcp) | 95%+ | Lightweight tree-sitter indexing (50-150MB RAM) |
-| Tool Output | [Context Mode](https://github.com/mksglu/context-mode) | 98% | Tool output sandboxed, not dumped |
-| Data Compression | [MCP Compressor](https://github.com/atlassian-labs/mcp-compressor) | 70-95% | MCP responses compressed + TOON |
-| Context Pruning | [Cozempic](https://github.com/Ruya-AI/cozempic) | 30-70% | Stale context auto-cleaned |
-| Input Compression | [Headroom](https://github.com/chopratejas/headroom) | ~50% | AST-aware prompt compression |
-| Output Verbosity | [Caveman](https://github.com/JuliusBrussee/caveman) | 60-75% | Terse, code-focused responses |
-| Code Navigation | [Serena](https://github.com/oraios/serena) | Significant | LSP-powered symbol navigation |
-| Library Docs | [Docfork](https://github.com/docfork/docfork) | Moderate | 9000+ library docs on demand |
-| Session Memory | [claude-mem](https://github.com/thedotmack/claude-mem) | Significant | Persistent cross-session memory + code exploration |
-| Security Analysis | [Semgrep](https://semgrep.dev/) | N/A (quality) | 5000+ rules, catches security bugs at write-time |
+## What's Inside
 
-**Combined effect:** 2-10x more usage from the same plan.
+### Agents
 
-## &#x1F916; Agents Deep Dive
+15 specialized agents that Claude auto-delegates to based on what you're doing. They live in `~/.claude/agents/` and cost zero tokens when they're not active.
 
-All agents live in `~/.claude/agents/` and are available globally. Claude auto-delegates to them based on the task, or you can invoke them explicitly.
-
-### Adversarial Coach &#x1F534;
-```
-Model: Opus | Effort: High | Tools: Read-only
-```
-Tries to **break** your code. Never praises, never approves. Every issue comes with a concrete exploit scenario. Use after any significant implementation.
-
-### Red Team &#x1F534;
-```
-Model: Opus | Effort: Max | Tools: Read-only
-```
-You tell it what security measures you added. It specifically attacks those stated assumptions. Finds blind spots that generic security review misses.
-
-### Architect &#x1F7E3;
-```
-Model: Opus | Effort: Max | Tools: Read-only
-```
-System design only. Produces ADRs (Architecture Decision Records). Compares 3+ approaches before recommending. **Never writes implementation code.**
-
-### Tree of Thought &#x1F535;
-```
-Model: Opus | Effort: Max
-```
-Mandatory 4-phase process: Decompose &#x2192; Branch (min 3 approaches) &#x2192; Evaluate &#x2192; Select. **Will not start implementing until all branches are compared.**
-
-### RISE Refiner &#x1F7E0;
-```
-Model: Opus | Effort: High
-```
-Recursive self-improvement: Generate &#x2192; Critique (exactly 3 weaknesses) &#x2192; Fix only those 3 &#x2192; Compare before/after. 17-24% measured improvement.
-
-### Constitutional Reviewer &#x1F535;
-```
-Model: Opus | Effort: High
-```
-4-pass review: Write &#x2192; Critique against 6 principles &#x2192; Rewrite fixes &#x2192; Verify all violations resolved. Must find at least 1 issue (if zero found, review wasn't thorough enough).
-
-### Researcher &#x1F7E6;
-```
-Model: Sonnet | No turn limit
-```
-Multi-depth research with 7 levels: `surface`, `basic`, `deep`, `in-depth`, `ultra`, `nuclear`, `overkill`. Each level maps to specific search strategies and agent patterns. Supports pluggable web search.
-
-### [See all agents &#x2192;](docs/AGENTS.md)
-
-## &#x2699;&#xFE0F; What Gets Installed
-
-| Component | Location | Purpose |
-|-----------|----------|---------|
-| 15 agents | `~/.claude/agents/` | Quality + reasoning + UI design patterns |
-| CLAUDE.md | `~/.claude/CLAUDE.md` | Lean config (~60 lines) |
-| Hooks | `~/.claude/settings.json` | Auto-index, auto-prune, graph-first nudge |
-| MCP servers | `~/.claude.json` | Code graph, context sandbox, UI libraries |
-| .claudeignore | Per-project | Prevent reading junk files |
-
-### Optional Components
-
-The installer asks before installing each of these:
-
-| Tool | What | Install |
-|------|------|---------|
-| RTK | CLI output compression | `cargo install --git https://github.com/rtk-ai/rtk` |
-| jCodeMunch | Lightweight code indexing | `pip install jcodemunch-mcp` |
-| Context Mode | Tool output sandboxing | `npm install -g context-mode` |
-| MCP Compressor | MCP response compression | `pip install mcp-compressor` |
-| Cozempic | Context auto-pruning | `pip install cozempic` |
-| Headroom | Prompt compression | `pip install "headroom-ai[all]"` |
-| Caveman | Terse output plugin | Via Claude Code plugin marketplace |
-| Serena | LSP code navigation | `uv tool install serena-agent@latest` |
-| Docfork | Library documentation | `npm install -g docfork` |
-| Graphify | Multi-modal code graph | `pip install graphifyy` |
-| Semgrep | Security analysis | Via Claude Code plugin marketplace |
-| claude-mem | Cross-session memory | Via Claude Code plugin marketplace |
-
-## &#x1F3A8; UI/Design Stack
-
-God Mode turns Claude into an elite frontend designer with autonomous visual feedback loops.
-
-### Component Libraries (MCP Servers)
-| Server | What You Get |
-|--------|-------------|
-| [21st.dev Magic](https://github.com/21st-dev/magic-mcp) | `/ui <description>` &#x2192; production-ready components |
-| [shadcn/ui](https://ui.shadcn.com/docs/registry/mcp) | Official component registry, zero hallucinations |
-| [Magic UI](https://magicui.design/docs/mcp) | 60+ animated components (beams, particles, meteors) |
-| [Animotion](https://animotion-mcp.github.io/) | 745 CSS animations + 9,000 SVG icons |
-| [Dembrandt](https://github.com/dembrandt/dembrandt) | Extract design tokens from any website |
-| [Aceternity UI](https://github.com/rudra016/aceternityui-mcp) | 200+ cinematic, 3D, parallax components |
-| [Glance](https://github.com/DebugBase/glance) | Browser screenshots — Claude **sees** what it built |
-
-### Design Agents
-| Agent | What It Does |
+**Security & Review**
+| Agent | What it does |
 |-------|-------------|
-| `ui-architect` | **Auto-triggers on any frontend task.** Fetches components from libraries, adds animations, ensures responsive + dark mode |
-| `design-critic` | **Auto-triggers after UI implementation.** Scores visual quality, catches inconsistencies, suggests polish |
+| `adversarial-coach` | Tries to break your code. Every issue comes with a concrete exploit, not a vague warning. |
+| `red-team` | You tell it what security measures you added. It attacks those specific assumptions. |
+| `constitutional-reviewer` | Multi-pass review: write, critique against 6 principles, rewrite, verify. Two modes — quick surgical or full systematic. |
+| `multi-perspective-reviewer` | 4 isolated review passes (security, performance, test coverage, correctness), each with blinders so nothing gets glossed over. |
+| `test-authenticator` | Catches fake tests — mocks that test nothing, assertions that always pass, happy-path-only coverage. |
 
-### How It Works Autonomously
-1. You say "build a landing page for X"
-2. `ui-architect` agent auto-activates (description-based routing)
-3. It fetches components from 21st.dev/shadcn/magicui instead of writing from scratch
-4. Adds animations from animotion + magicui
-5. `design-critic` auto-runs after implementation
-6. Visual score + specific fix suggestions returned
+**Planning & Design**
+| Agent | What it does |
+|-------|-------------|
+| `architect` | System design and ADRs. Compares 3+ approaches before recommending. Never writes implementation code. |
+| `tree-of-thought` | Forces exploration of multiple solutions before committing. Won't start coding until all branches are compared. |
+| `socratic-questioner` | 6 mandatory questions before any code. Surfaces hidden assumptions and finds the simplest path. |
+| `spec-interviewer` | Interviews you through 5 rounds of questions, then produces a SPEC.md detailed enough for a fresh session to execute without follow-ups. |
+| `ensemble-judge` | Evaluates competing solutions through binary gates and weighted scoring. Picks a winner, never declares a tie. |
 
-> **Note:** 21st.dev requires a free API key from [21st.dev](https://21st.dev). Replace `REPLACE_WITH_YOUR_21STDEV_API_KEY` in `~/.claude.json` after install.
+**Research & Integration**
+| Agent | What it does |
+|-------|-------------|
+| `researcher` | 7 depth levels from `surface` (30 seconds) to `overkill` (unlimited). Launches parallel sub-agents at higher levels. |
+| `hypothesis-tester` | Property-based testing across 1000+ random inputs. Finds edge cases humans miss. |
+| `integration-enforcer` | Verifies new code is actually wired into the running system. Catches the #1 AI coding failure: beautiful code that nothing calls. |
 
-## &#x1F4E6; Per-Project Setup
+**UI & Frontend**
+| Agent | What it does |
+|-------|-------------|
+| `ui-architect` | Auto-triggers on frontend tasks. Pulls from component libraries (shadcn, magicui, animotion) instead of writing from scratch. Handles responsive, dark mode, accessibility. |
+| `design-critic` | Auto-runs after UI implementation. Scores visual quality 1-10 with specific fix suggestions. |
 
-After installing God Mode globally, each new project needs:
+### Token Savings
 
-### 1. Code Index (automatic)
-jCodeMunch indexes your project automatically when Claude navigates code via its MCP tools. No manual setup needed.
+These tools run automatically after setup — they intercept Claude's input and output and compress what doesn't need to be verbose.
 
-### 2. Graphify (one-time per repo)
+| Tool | What it does | Savings |
+|------|-------------|---------|
+| [RTK](https://github.com/rtk-ai/rtk) | Compresses bash command output | 60-90% |
+| [jCodeMunch](https://github.com/jgravelle/jcodemunch-mcp) | Lightweight code indexing via tree-sitter | 95%+ |
+| [Context Mode](https://github.com/mksglu/context-mode) | Sandboxes tool outputs in SQLite instead of dumping them into context | 98% |
+| [MCP Compressor](https://github.com/atlassian-labs/mcp-compressor) | Compresses MCP server responses | 70-95% |
+| [Cozempic](https://github.com/Ruya-AI/cozempic) | Auto-prunes stale context at multiple thresholds | 30-70% |
+| [Headroom](https://github.com/chopratejas/headroom) | AST-aware prompt compression | ~50% |
+| [Serena](https://github.com/oraios/serena) | LSP-powered code navigation (40+ languages) | Significant |
+| [Docfork](https://github.com/docfork/docfork) | 9000+ library docs served on demand | Moderate |
+
+The installer asks before adding each one. Everything is optional.
+
+### UI Component Libraries
+
+If you do frontend work, GodClaude connects Claude to real component registries so it fetches production components instead of hallucinating them.
+
+| Library | What you get |
+|---------|-------------|
+| [21st.dev Magic](https://github.com/21st-dev/magic-mcp) | AI-generated production components |
+| [shadcn/ui](https://ui.shadcn.com/docs/registry/mcp) | Official registry, zero hallucinations |
+| [Magic UI](https://magicui.design/docs/mcp) | 60+ animated components |
+| [Animotion](https://animotion-mcp.github.io/) | 745 CSS animations, 9000 SVG icons |
+| [Aceternity UI](https://github.com/rudra016/aceternityui-mcp) | 200+ cinematic and 3D components |
+| [Glance](https://github.com/DebugBase/glance) | Browser screenshots — Claude sees what it built |
+
+> 21st.dev needs a free API key from [21st.dev](https://21st.dev). The installer reminds you.
+
+### Safety Hooks
+
+These run deterministically on every session — no LLM involved, just bash and regex.
+
+| What it catches | When |
+|----------------|------|
+| Secrets in prompts or files (AWS, GitHub, Stripe, SSH keys, JWTs, and more) | Before every prompt and file write |
+| Destructive commands (`rm -rf`, `git reset --hard`, `DROP TABLE`, `git clean -f`, etc.) | Before every bash command |
+| `--no-verify` on git commits | Before git commits |
+| Commits to main/master | Before git commits (warning, not blocking) |
+| Orphan files with zero import references | On file edits and session end |
+| Stuck loops (3+ identical failures) | After bash commands |
+| Session continuity | Writes HANDOVER.md on exit, reads it on next session start |
+
+### Per-Project Setup
+
+After the global install, each project just needs a `.claudeignore` file (a template is included) to keep Claude from reading `node_modules/`, `dist/`, and other noise. Code indexing happens automatically on first visit.
+
+---
+
+## How It Works
+
+The approach is simple: use Claude Code's own extension points (agents, hooks, MCP servers, plugins) to make Claude behave better by default.
+
+- **Agents over instructions** — a specialized agent that loads on-demand costs zero tokens when unused. A rule in CLAUDE.md costs tokens every single turn.
+- **Hooks over suggestions** — a PreToolUse hook that blocks a destructive command is stronger than a polite instruction Claude might ignore.
+- **Evidence over assertions** — every verification requires proof (test output, type checker results), not "this should work."
+- **Autonomous over manual** — tools that intercept and optimize automatically beat workflows that depend on you remembering to invoke them.
+
+---
+
+## Uninstall
+
 ```bash
-# In your project directory:
-graphify .
-# Or via Claude:
-/graphify .
-```
-Auto-updates via PostToolUse hooks.
-
-### 3. .claudeignore (recommended)
-```bash
-# Copy the template to your project root:
-cp ~/.claude-god-mode/.claudeignore.template /path/to/project/.claudeignore
-```
-Prevents Claude from reading `node_modules/`, `dist/`, build artifacts, etc.
-
-## &#x1F6E1;&#xFE0F; Safety &amp; Automation
-
-### Hook Scripts (`~/.claude/bin/`)
-| Script | What It Does |
-|--------|-------------|
-| `check-orphan.sh` | Detects files with zero import references (advisory) |
-| `require-connected-code.sh` | **Blocks "done"** if new code has zero callers |
-| `loop-guard.sh` | Escalating guidance on 3+ consecutive identical failures |
-| `session-handover.sh` | Auto-writes HANDOVER.md on session end (git state, decisions, next steps) |
-| `session-resume.sh` | Auto-reads HANDOVER.md on session start for continuity |
-| `auto-onboard.sh` | Auto-indexes new projects on first visit (graphify) |
-
-### Safety Hooks (Deterministic)
-| Hook | Trigger | Effect |
-|------|---------|--------|
-| Secret scanner | UserPromptSubmit + Write/Edit | **Blocks** secrets in prompts and files |
-| Destructive command guard | Bash | **Blocks** `rm -rf /`, `git reset --hard`, `DROP TABLE`, etc. |
-| `--no-verify` block | Bash(git commit*) | **Blocks** hook bypass attempts |
-| Branch protection | Bash(git commit*) | **Warns** on commits to main/master |
-| Orphan detector | Edit | Warns on files with zero references |
-| Connectivity gate | Stop | **Blocks** completion if code is disconnected |
-| Loop guard | Bash (PostToolUse) | Escalating guidance on stuck loops |
-
-## &#x1F3D7;&#xFE0F; Architecture
-
-```
-~/.claude/
-  +-  CLAUDE.md              ~80 lines (lean, connectivity + testing rules)
-  +-  settings.json          17 hooks across 8 lifecycle events
-  +-  agents/                15 specialized agents (on-demand, 0 tokens when unused)
-  +-  bin/                   5 hook scripts (safety, handover, loop guard)
-  +-  skills/                Plugin skills (graphify, caveman, etc.)
-  +-  plugins/               11 enabled (LSP, security, design, memory, skills)
-  +-  projects/              Per-project memory and config
-
-~/.claude.json               12 MCP servers: jcodemunch, context-mode,
-                             headroom, serena, docfork, 21st-dev-magic, shadcn,
-                             magicui, animotion, dembrandt, aceternity, glance
-```
-
-## &#x1F4AC; Philosophy
-
-1. **Autonomous over manual** — tools that intercept and optimize automatically beat instructions that Claude might ignore
-2. **Agents over CLAUDE.md** — specialized agents load on-demand (~0 tokens when unused) vs. CLAUDE.md rules (loaded every turn)
-3. **Hooks over suggestions** — PreToolUse hooks that nudge behavior are stronger than polite instructions
-4. **Evidence over assertions** — every verification requires proof (test output, type checker results), not "this should work"
-5. **Lean base, rich extensions** — CLAUDE.md stays under 60 lines; complexity lives in agents and hooks
-
-## &#x1F5D1;&#xFE0F; Uninstall
-
-```bash
-# From the cloned repo:
 bash uninstall.sh
-
-# Or one-line:
-curl -fsSL https://raw.githubusercontent.com/Itachi-1824/claude-god-mode/main/uninstall.sh | bash
 ```
 
-The uninstaller interactively removes agents, hooks, MCP servers, bin scripts, and env vars. It preserves non-God-Mode configuration.
+The uninstaller interactively removes agents, hooks, MCP servers, and env vars. Your non-GodClaude configuration is preserved.
 
-## &#x1F91D; Contributing
+---
 
-PRs welcome! Areas we're looking for help:
+## Contributing
 
-- [ ] New agents for specific domains (ML, mobile, embedded, etc.)
-- [ ] Search provider integrations
-- [ ] Benchmarks comparing with/without God Mode
-- [ ] Platform-specific install improvements
-- [ ] Documentation translations
+PRs welcome. Areas where help is needed:
 
-## &#x1F4DD; License
+- New agents for specific domains (ML, mobile, embedded)
+- Benchmarks comparing with/without GodClaude
+- Platform-specific install improvements
 
-[MIT](LICENSE) &#x2014; do whatever you want with it.
+## License
+
+[MIT](LICENSE)
 
 ---
 
 <p align="center">
-  <sub>Built by <a href="https://github.com/Itachi-1824">@Itachi-1824</a> after hitting Claude Code limits one too many times.</sub>
+  <sub>Originally built by <a href="https://github.com/Itachi-1824">@Itachi-1824</a>. Maintained and extended by <a href="https://github.com/elixpo">@elixpo</a>.</sub>
 </p>
