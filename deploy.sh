@@ -56,13 +56,7 @@ fi
 echo ""
 echo -e "${CYAN}[*]${NC} Publishing to npm..."
 
-# Set auth token for this publish
-echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
-
-npm publish --access public
-
-# Clean up .npmrc
-rm -f .npmrc
+npm publish --access public --registry https://registry.npmjs.org/ --//registry.npmjs.org/:_authToken="${NPM_TOKEN}"
 
 echo ""
 echo -e "${GREEN}[+]${NC} Published ${NAME}@${VERSION}"
