@@ -19,7 +19,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node ~/.claude/hooks/serena-grep-guard.js",
+            "command": "node ~/.claude/hooks/grep-guard.js",
             "timeout": 5
           }
         ]
@@ -29,7 +29,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node ~/.claude/hooks/serena-glob-guard.js",
+            "command": "node ~/.claude/hooks/glob-guard.js",
             "timeout": 5
           }
         ]
@@ -50,7 +50,7 @@
           },
           {
             "type": "command",
-            "command": "node ~/.claude/hooks/serena-bash-guard.js",
+            "command": "node ~/.claude/hooks/bash-guard.js",
             "timeout": 5
           }
         ]
@@ -70,7 +70,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash ~/.claude/bin/check-orphan.sh",
+            "command": "bash ~/.claude/bin/orphan.sh",
             "timeout": 5000
           }
         ]
@@ -92,7 +92,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash ~/.claude/bin/loop-guard.sh",
+            "command": "bash ~/.claude/bin/loopcheck.sh",
             "timeout": 3000,
             "async": true
           }
@@ -123,12 +123,12 @@
           },
           {
             "type": "command",
-            "command": "bash ~/.claude/bin/session-resume.sh",
+            "command": "bash ~/.claude/bin/resume.sh",
             "timeout": 5000
           },
           {
             "type": "command",
-            "command": "bash ~/.claude/bin/auto-onboard.sh",
+            "command": "bash ~/.claude/bin/onboard.sh",
             "timeout": 3000
           }
         ]
@@ -169,12 +169,12 @@
           },
           {
             "type": "command",
-            "command": "bash ~/.claude/bin/require-connected-code.sh",
+            "command": "bash ~/.claude/bin/wiring.sh",
             "timeout": 15000
           },
           {
             "type": "command",
-            "command": "bash ~/.claude/bin/session-handover.sh",
+            "command": "bash ~/.claude/bin/handover.sh",
             "timeout": 15000,
             "async": true
           }

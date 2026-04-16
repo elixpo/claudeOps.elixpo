@@ -60,8 +60,8 @@ fi
 
 # ── Step 3: Remove hook scripts ──────────────────────────────
 BIN_SCRIPTS=(
-  check-orphan.sh require-connected-code.sh loop-guard.sh
-  session-handover.sh session-resume.sh auto-onboard.sh
+  orphan.sh wiring.sh loopcheck.sh
+  handover.sh resume.sh onboard.sh
 )
 
 if ask "Remove ClaudeOps bin scripts from $CLAUDE_DIR/bin/?"; then
@@ -79,7 +79,7 @@ fi
 
 # ── Step 4: Remove hook scripts (JS) ─────────────────────────
 HOOK_SCRIPTS=(
-  serena-grep-guard.js serena-glob-guard.js serena-bash-guard.js
+  grep-guard.js glob-guard.js bash-guard.js
 )
 
 if ask "Remove ClaudeOps hook scripts from $CLAUDE_DIR/hooks/?"; then
@@ -114,9 +114,9 @@ if 'hooks' not in settings:
 
 # ClaudeOps hook signatures to identify and remove
 god_mode_signatures = [
-    'serena-grep-guard', 'serena-glob-guard', 'serena-bash-guard',
-    'check-orphan.sh', 'require-connected-code.sh', 'loop-guard.sh',
-    'session-handover.sh', 'session-resume.sh', 'auto-onboard.sh',
+    'grep-guard', 'glob-guard', 'bash-guard',
+    'orphan.sh', 'wiring.sh', 'loopcheck.sh',
+    'handover.sh', 'resume.sh', 'onboard.sh',
     'cozempic', 'SECRET IN PROMPT', 'SECRET DETECTED',
     'Destructive command', '--no-verify is not allowed'
 ]

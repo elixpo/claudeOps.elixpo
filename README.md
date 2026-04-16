@@ -1,5 +1,8 @@
 <p align="center">
-  <img src="public/logo.png" alt="ClaudeOps" width="200" />
+  <img src="public/banner.png" alt="ClaudeOps" width="100%" />
+</p>
+<p align="center">
+  <img src="public/logo.png" alt="ClaudeOps" width="120" />
   <h1 align="center">ClaudeOps</h1>
   <p align="center">
     <strong>Get more out of every Claude Code session.</strong><br/>
