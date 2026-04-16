@@ -1,0 +1,36 @@
+{
+  "name": "@elixpo/claudeops",
+  "version": "1.0.0",
+  "description": "Drop-in optimization toolkit for Claude Code — 15 agents, token savings, safety hooks, UI pipeline",
+  "bin": {
+    "claudeops": "./cli.js"
+  },
+  "files": [
+    "cli.js",
+    "lib/",
+    "agents/",
+    "hooks/",
+    "config/",
+    "bin/"
+  ],
+  "keywords": [
+    "claude",
+    "claude-code",
+    "ai",
+    "agents",
+    "mcp",
+    "optimization",
+    "token-savings",
+    "devtools"
+  ],
+  "author": "Elixpo <ayushbhatt633@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/elixpo/claudeops.git"
+  },
+  "homepage": "https://github.com/elixpo/claudeops",
+  "engines": {
+    "node": ">=18"
+  }
+}
