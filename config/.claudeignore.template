@@ -11,15 +11,16 @@ vendor/
 .venv/
 __pycache__/
 
-# Lock files
-*.lock
-package-lock.json
+# Lock files (keep package-lock.json and yarn.lock readable for version debugging)
+pnpm-lock.yaml
+Gemfile.lock
+poetry.lock
+Cargo.lock
 
 # Generated files
 *.min.js
 *.min.css
 *.map
-*.d.ts
 *.tsbuildinfo
 
 # Coverage & test artifacts
