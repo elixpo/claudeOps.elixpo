@@ -75,8 +75,7 @@ SESSION_FILES=$(git diff HEAD~10...HEAD --name-only 2>/dev/null | sort -u | head
 # ── Extract last assistant messages from transcript (no LLM, grep only) ──────
 LAST_MESSAGES=""
 if [[ -n "$TRANSCRIPT" && -f "$TRANSCRIPT" ]]; then
-  # Pull the last 5 assistant text turns from the JSONL transcript
-  LAST_MESSAGES=$(python3 - <<'PYEOF' 2>/dev/null
+  LAST_MESSAGES=$(TRANSCRIPT_PATH="$TRANSCRIPT" python3 - <<'PYEOF' 2>/dev/null
 import sys, json, os
 
 transcript = os.environ.get('TRANSCRIPT_PATH', '')
@@ -110,43 +109,6 @@ with open(transcript, 'r', encoding='utf-8', errors='replace') as f:
 meaningful = [m for m in messages if len(m) > 40][-5:]
 for m in meaningful:
     # Cap each at 300 chars
-    snippet = m[:300] + ('...' if len(m) > 300 else '')
-    print(f"- {snippet}")
-PYEOF
-)
-  export TRANSCRIPT_PATH="$TRANSCRIPT"
-  # Re-run with env var available
-  LAST_MESSAGES=$(TRANSCRIPT_PATH="$TRANSCRIPT" python3 - <<'PYEOF' 2>/dev/null
-import sys, json, os
-
-transcript = os.environ.get('TRANSCRIPT_PATH', '')
-if not transcript or not os.path.exists(transcript):
-    sys.exit(0)
-
-messages = []
-with open(transcript, 'r', encoding='utf-8', errors='replace') as f:
-    for line in f:
-        line = line.strip()
-        if not line:
-            continue
-        try:
-            obj = json.loads(line)
-        except Exception:
-            continue
-        msg_type = obj.get('type', '')
-        if msg_type == 'assistant':
-            content = obj.get('message', {}).get('content', [])
-            if isinstance(content, list):
-                for block in content:
-                    if isinstance(block, dict) and block.get('type') == 'text':
-                        text = block.get('text', '').strip()
-                        if text:
-                            messages.append(text)
-            elif isinstance(content, str) and content.strip():
-                messages.append(content.strip())
-
-meaningful = [m for m in messages if len(m) > 40][-5:]
-for m in meaningful:
     snippet = m[:300] + ('...' if len(m) > 300 else '')
     print(f"- {snippet}")
 PYEOF

@@ -78,11 +78,11 @@ if [ ! -f "$SETTINGS" ]; then
 fi
 
 # Use Python to merge hooks safely
-python3 << 'PYEOF'
-import json, os, sys
+REPO_DIR="$REPO_DIR" python3 -c "
+import json, os
 
-settings_path = os.path.expanduser("~/.claude/settings.json")
-hooks_path = os.path.join(sys.argv[1] if len(sys.argv) > 1 else ".", "config", "hooks.json")
+settings_path = os.path.expanduser('~/.claude/settings.json')
+hooks_file = os.path.join(os.environ.get('REPO_DIR', '.'), 'config', 'hooks.json')
 
 # Load existing settings
 try:
@@ -93,63 +93,32 @@ except (json.JSONDecodeError, FileNotFoundError):
 
 # Load hooks template
 try:
-    script_dir = os.environ.get("REPO_DIR", ".")
-    hooks_file = os.path.join(script_dir, "config", "hooks.json")
     with open(hooks_file) as f:
         hooks_data = json.load(f)
 except FileNotFoundError:
-    print("  [!] hooks.json not found, skipping")
-    sys.exit(0)
+    print('  [!] hooks.json not found, skipping')
+    exit(0)
 
-new_hooks = hooks_data.get("hooks", {})
+new_hooks = hooks_data.get('hooks', {})
 
 # Merge: add new hook entries without duplicating
-if "hooks" not in settings:
-    settings["hooks"] = {}
+if 'hooks' not in settings:
+    settings['hooks'] = {}
 
 for event, entries in new_hooks.items():
-    if event not in settings["hooks"]:
-        settings["hooks"][event] = []
-    # Check for duplicates by command string
+    if event not in settings['hooks']:
+        settings['hooks'][event] = []
     existing_cmds = set()
-    for entry in settings["hooks"][event]:
-        for hook in entry.get("hooks", []):
-            existing_cmds.add(hook.get("command", ""))
+    for entry in settings['hooks'][event]:
+        for hook in entry.get('hooks', []):
+            existing_cmds.add(hook.get('command', ''))
     for new_entry in entries:
-        is_dup = False
-        for hook in new_entry.get("hooks", []):
-            if hook.get("command", "") in existing_cmds:
-                is_dup = True
-                break
+        is_dup = any(h.get('command', '') in existing_cmds for h in new_entry.get('hooks', []))
         if not is_dup:
-            settings["hooks"][event].append(new_entry)
+            settings['hooks'][event].append(new_entry)
 
-with open(settings_path, "w") as f:
+with open(settings_path, 'w') as f:
     json.dump(settings, f, indent=2)
-print("  [+] Hooks merged into settings.json")
-PYEOF
-REPO_DIR="$REPO_DIR" python3 -c "
-import json, os
-settings_path = os.path.expanduser('~/.claude/settings.json')
-hooks_file = os.path.join('$REPO_DIR', 'config', 'hooks.json')
-try:
-    with open(settings_path) as f: settings = json.load(f)
-except: settings = {}
-try:
-    with open(hooks_file) as f: hooks_data = json.load(f)
-except:
-    print('  [!] hooks.json not found'); exit(0)
-new_hooks = hooks_data.get('hooks', {})
-if 'hooks' not in settings: settings['hooks'] = {}
-for event, entries in new_hooks.items():
-    if event not in settings['hooks']: settings['hooks'][event] = []
-    existing = set()
-    for e in settings['hooks'][event]:
-        for h in e.get('hooks',[]): existing.add(h.get('command',''))
-    for ne in entries:
-        dup = any(h.get('command','') in existing for h in ne.get('hooks',[]))
-        if not dup: settings['hooks'][event].append(ne)
-with open(settings_path, 'w') as f: json.dump(settings, f, indent=2)
 print('  [+] Hooks merged into settings.json')
 " 2>/dev/null || warn "Could not auto-merge hooks — see config/hooks.json for manual setup"
 
