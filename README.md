@@ -1,4 +1,5 @@
 <p align="center">
+  <img src="public/logo.png" alt="ClaudeOps" width="200" />
   <h1 align="center">ClaudeOps</h1>
   <p align="center">
     <strong>Get more out of every Claude Code session.</strong><br/>
@@ -163,7 +164,7 @@ PRs welcome. Areas where help is needed:
 [MIT](LICENSE)
 
 <p align="center">
-  <sub>Originally created by <a href="https://github.com/Itachi-1824">@Itachi-1824</a>. Maintained and extended by <a href="https://github.com/elixpo">@elixpo</a>.</sub>
+  <sub>Built and maintained by <a href="https://github.com/elixpo">@elixpo</a></sub>
 </p>
 
 <picture>
