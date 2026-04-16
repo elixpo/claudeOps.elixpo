@@ -35,7 +35,26 @@ while IFS= read -r file; do
   NOEXT=$(basename "$file" | sed 's/\.[^.]*$//')
   [[ ${#NOEXT} -lt 3 ]] && continue
 
-  REF_COUNT=$(cd "$CWD" && rg -l "\b${NOEXT}\b" --type-add 'src:*.{ts,tsx,js,jsx,py,rs,go}' --type src . 2>/dev/null \
+  # Use import-aware patterns instead of raw word boundary to reduce false positives
+  case "$file" in
+    *.ts|*.tsx|*.js|*.jsx|*.mjs)
+      IMPORT_PATTERN="(from\s+['\"][^'\"]*${NOEXT}['\"]|require\(['\"][^'\"]*${NOEXT}['\"]|import\s+.*['\"][^'\"]*${NOEXT}['\"])"
+      ;;
+    *.py)
+      IMPORT_PATTERN="(from\s+[a-zA-Z0-9_.]*${NOEXT}\b|import\s+[a-zA-Z0-9_.]*${NOEXT}\b)"
+      ;;
+    *.rs)
+      IMPORT_PATTERN="(use\s+[a-zA-Z0-9_:]*\b${NOEXT}\b|mod\s+${NOEXT}\b)"
+      ;;
+    *.go)
+      IMPORT_PATTERN="\"[^\"]*/${NOEXT}\""
+      ;;
+    *)
+      IMPORT_PATTERN="\b${NOEXT}\b"
+      ;;
+  esac
+
+  REF_COUNT=$(cd "$CWD" && rg -l "$IMPORT_PATTERN" --type-add 'src:*.{ts,tsx,js,jsx,py,rs,go}' --type src . 2>/dev/null \
     | grep -v "$file" | wc -l | tr -d ' ' || echo "0")
 
   [[ "$REF_COUNT" -eq "0" ]] && ORPHANS="$ORPHANS\n  - $file (zero references)"
