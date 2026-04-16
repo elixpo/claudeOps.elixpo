@@ -170,32 +170,13 @@ except:
     exit(0)
 
 mcps = d.get('mcpServers', {})
-removed = []
-for name in $( echo "${GOD_MODE_MCPS[@]}" | python3 -c "import sys; print(sys.stdin.read().split())" ):
-    if name in mcps:
-        del mcps[name]
-        removed.append(name)
-
-d['mcpServers'] = mcps
-with open(path, 'w') as f:
-    json.dump(d, f, indent=2)
-print(f'  [+] Removed {len(removed)} MCP servers: {', '.join(removed)}')
-" 2>/dev/null || {
-    # Simpler fallback
-    python3 -c "
-import json, os
-path = os.path.expanduser('~/.claude.json')
-try:
-    with open(path) as f: d = json.load(f)
-except: exit(0)
-mcps = d.get('mcpServers', {})
 to_remove = ['jcodemunch','context-mode','21st-dev-magic','shadcn','magicui','animotion','aceternity','dembrandt','glance']
 removed = [n for n in to_remove if mcps.pop(n, None) is not None]
 d['mcpServers'] = mcps
-with open(path, 'w') as f: json.dump(d, f, indent=2)
+with open(path, 'w') as f:
+    json.dump(d, f, indent=2)
 print(f'  [+] Removed {len(removed)} MCP servers')
 " 2>/dev/null || warn "Could not clean MCP servers — edit ~/.claude.json manually"
-  }
 else
   info "Skipping MCP server removal"
 fi

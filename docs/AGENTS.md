@@ -105,7 +105,7 @@ Property-based testing: instead of `assert f(2,3) == 5`, tests properties like `
 | **Max Turns** | 20 |
 | **Use when** | Important PRs, thorough multi-angle review needed |
 
-3 isolated review passes with BLINDERS: Security Auditor (only security), Performance Engineer (only perf), Test Coverage Analyst (only missing tests). Single-domain focus produces deeper analysis than multi-domain review. Synthesis step deduplicates and prioritizes.
+4 isolated review passes with BLINDERS: Security Auditor (only security), Performance Engineer (only perf), Test Coverage Analyst (only missing tests), Correctness Analyst (only logic bugs). Single-domain focus produces deeper analysis than multi-domain review. Synthesis step deduplicates and prioritizes.
 
 ### researcher
 | | |

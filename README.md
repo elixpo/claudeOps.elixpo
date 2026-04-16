@@ -290,6 +290,18 @@ Prevents Claude from reading `node_modules/`, `dist/`, build artifacts, etc.
 4. **Evidence over assertions** — every verification requires proof (test output, type checker results), not "this should work"
 5. **Lean base, rich extensions** — CLAUDE.md stays under 60 lines; complexity lives in agents and hooks
 
+## &#x1F5D1;&#xFE0F; Uninstall
+
+```bash
+# From the cloned repo:
+bash uninstall.sh
+
+# Or one-line:
+curl -fsSL https://raw.githubusercontent.com/Itachi-1824/claude-god-mode/main/uninstall.sh | bash
+```
+
+The uninstaller interactively removes agents, hooks, MCP servers, bin scripts, and env vars. It preserves non-God-Mode configuration.
+
 ## &#x1F91D; Contributing
 
 PRs welcome! Areas we're looking for help:

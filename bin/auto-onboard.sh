@@ -13,11 +13,13 @@ MARKER="$CWD/.claude/.onboarded"
 
 # First time — run setup silently in background
 mkdir -p "$CWD/.claude" 2>/dev/null || true
-touch "$MARKER" 2>/dev/null || true
 
-# Graphify: build index if not exists (background, no output to Claude)
+# Graphify: build index if not exists (background, marker written on success)
 if [ ! -d "$CWD/graphify-out" ] && command -v graphify &>/dev/null; then
-  (cd "$CWD" && graphify . --no-viz >/dev/null 2>&1 &)
+  (cd "$CWD" && graphify . --no-viz >/dev/null 2>&1 && touch "$MARKER" 2>/dev/null) &
+else
+  # No graphify — just mark as onboarded
+  touch "$MARKER" 2>/dev/null || true
 fi
 
 exit 0
