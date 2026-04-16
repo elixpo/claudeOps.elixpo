@@ -163,6 +163,4 @@ PRs welcome. Areas where help is needed:
 
 ---
 
-<p align="center">
-  <sub>Originally built by <a href="https://github.com/Itachi-1824">@Itachi-1824</a>. Maintained and extended by <a href="https://github.com/elixpo">@elixpo</a>.</sub>
-</p>
+
