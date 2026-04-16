@@ -28,19 +28,24 @@ ClaudeOps fixes that. It's a set of config files, agents, and hooks that drop in
 
 ## Quick Start
 
-**macOS / Linux:**
 ```bash
-curl -fsSL https://raw.githubusercontent.com/elixpo/claudeops/main/install.sh | bash
+npx @elixpo/claudeops init
 ```
 
-**Manual:**
+That's it. The installer walks you through each component — nothing gets installed without your say-so.
+
+**Other commands:**
 ```bash
-git clone https://github.com/elixpo/claudeops.git
-cd claudeops
-bash install.sh
+npx @elixpo/claudeops status    # see what's installed
+npx @elixpo/claudeops remove    # clean uninstall
 ```
 
-The installer walks you through each component — nothing gets installed without your say-so.
+**Flags:**
+```bash
+npx @elixpo/claudeops init --yes          # skip all prompts, install everything
+npx @elixpo/claudeops init --agents-only  # only install the 15 agents
+npx @elixpo/claudeops init --no-mcp       # skip MCP server setup
+```
 
 ---
 
@@ -147,10 +152,10 @@ The approach is simple: use Claude Code's own extension points (agents, hooks, M
 ## Uninstall
 
 ```bash
-bash uninstall.sh
+npx @elixpo/claudeops remove
 ```
 
-The uninstaller interactively removes agents, hooks, MCP servers, and env vars. Your non-ClaudeOps configuration is preserved.
+Interactively removes agents, hooks, MCP servers, and plugins. Your non-ClaudeOps configuration is preserved.
 
 ---
 
