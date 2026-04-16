@@ -1,7 +1,4 @@
 <p align="center">
-  <img src="public/banner.png" alt="ClaudeOps" width="100%" />
-</p>
-<p align="center">
   <img src="public/logo.png" alt="ClaudeOps" width="120" />
   <h1 align="center">ClaudeOps</h1>
   <p align="center">
@@ -25,6 +22,13 @@ Claude Code is powerful, but out of the box it burns through tokens reading thin
 ClaudeOps fixes that. It's a set of config files, agents, and hooks that drop into your Claude Code setup and make it work the way you'd expect a senior engineer to work — research before coding, review before merging, prove things work before saying "done."
 
 ---
+
+<p align="center">
+  <img src="public/banner.png" alt="ClaudeOps" width="100%" />
+</p>
+
+--- 
+
 
 ## Quick Start
 
