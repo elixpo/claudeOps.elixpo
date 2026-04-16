@@ -1,5 +1,5 @@
 {
-  "name": "@elixpo/claudeops",
+  "name": "@elixpo/claudeOps.elixpo",
   "version": "1.0.0",
   "description": "Drop-in optimization toolkit for Claude Code — 15 agents, token savings, safety hooks, UI pipeline",
   "bin": {
@@ -39,9 +39,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/elixpo/claudeops.git"
+    "url": "https://github.com/elixpo/claudeOps.elixpo.git"
   },
-  "homepage": "https://github.com/elixpo/claudeops",
+  "homepage": "https://github.com/elixpo/claudeOps.elixpo",
   "engines": {
     "node": ">=20"
   }

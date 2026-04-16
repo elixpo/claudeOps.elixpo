@@ -22,7 +22,7 @@ if [ -d "$(dirname "$0")/agents" ]; then
 else
   REPO_DIR="$(mktemp -d)"
   info "Downloading claudeops..."
-  git clone --depth 1 https://github.com/elixpo/claudeops.git "$REPO_DIR" 2>&1 | tail -1
+  git clone --depth 1 https://github.com/elixpo/claudeOps.elixpo.git "$REPO_DIR" 2>&1 | tail -1
 fi
 
 echo ""
@@ -388,5 +388,5 @@ echo -e "       - everything-claude-code (affaan-m)"
 echo -e "    ${YELLOW}3.${NC} In any project: say 'index this project' to build the code graph"
 echo -e "    ${YELLOW}4.${NC} Copy .claudeignore template to your project roots"
 echo ""
-echo -e "  ${PURPLE}If this helped, star the repo: https://github.com/elixpo/claudeops${NC}"
+echo -e "  ${PURPLE}If this helped, star the repo: https://github.com/elixpo/claudeOps.elixpo${NC}"
 echo ""

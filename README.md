@@ -2,13 +2,14 @@
   <img src="public/logo.png" alt="ClaudeOps" width="120" />
   <h1 align="center">ClaudeOps</h1>
   <p align="center">
-    <strong>Get more out of every Claude Code session.</strong><br/>
-    15 specialized agents, automatic token savings, smarter safety hooks, and a UI design pipeline — all drop-in.
+    <strong>Make Claude Code actually work like a senior engineer.</strong><br/>
+    Drop-in agents, automatic token compression, safety hooks, and a UI design pipeline — one command to install.
   </p>
   <p align="center">
-    <a href="#quick-start"><img src="https://img.shields.io/badge/setup-2%20minutes-brightgreen?style=flat-square" alt="Setup Time"></a>
+    <a href="https://www.npmjs.com/package/@elixpo/claudeOps.elixpo"><img src="https://img.shields.io/npm/v/@elixpo/claudeOps.elixpo?style=flat-square&color=cb3837" alt="npm"></a>
+    <a href="https://www.npmjs.com/package/@elixpo/claudeOps.elixpo"><img src="https://img.shields.io/npm/dm/@elixpo/claudeOps.elixpo?style=flat-square" alt="Downloads"></a>
+    <a href="https://github.com/elixpo/claudeOps.elixpo/stargazers"><img src="https://img.shields.io/github/stars/elixpo/claudeOps.elixpo?style=flat-square&color=gold" alt="Stars"></a>
     <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue?style=flat-square" alt="License"></a>
-    <a href="https://github.com/elixpo/claudeops/stargazers"><img src="https://img.shields.io/github/stars/elixpo/claudeops?style=flat-square&color=gold" alt="Stars"></a>
     <img src="https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey?style=flat-square" alt="Platform">
   </p>
 </p>
@@ -33,22 +34,22 @@ ClaudeOps fixes that. It's a set of config files, agents, and hooks that drop in
 ## Quick Start
 
 ```bash
-npx @elixpo/claudeops init
+npx @elixpo/claudeOps.elixpo init
 ```
 
 That's it. The installer walks you through each component — nothing gets installed without your say-so.
 
 **Other commands:**
 ```bash
-npx @elixpo/claudeops status    # see what's installed
-npx @elixpo/claudeops remove    # clean uninstall
+npx @elixpo/claudeOps.elixpo status    # see what's installed
+npx @elixpo/claudeOps.elixpo remove    # clean uninstall
 ```
 
 **Flags:**
 ```bash
-npx @elixpo/claudeops init --yes          # skip all prompts, install everything
-npx @elixpo/claudeops init --agents-only  # only install the 15 agents
-npx @elixpo/claudeops init --no-mcp       # skip MCP server setup
+npx @elixpo/claudeOps.elixpo init --yes          # skip all prompts, install everything
+npx @elixpo/claudeOps.elixpo init --agents-only  # only install the 15 agents
+npx @elixpo/claudeOps.elixpo init --no-mcp       # skip MCP server setup
 ```
 
 ---
@@ -156,7 +157,7 @@ The approach is simple: use Claude Code's own extension points (agents, hooks, M
 ## Uninstall
 
 ```bash
-npx @elixpo/claudeops remove
+npx @elixpo/claudeOps.elixpo remove
 ```
 
 Interactively removes agents, hooks, MCP servers, and plugins. Your non-ClaudeOps configuration is preserved.
@@ -180,9 +181,9 @@ PRs welcome. Areas where help is needed:
 </p>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/elixpo/claudeops/output/github-contribution-grid-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/elixpo/claudeops/output/github-contribution-grid-snake.svg" />
-  <img alt="github-snake" src="https://raw.githubusercontent.com/elixpo/claudeops/output/github-contribution-grid-snake-dark.svg" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/elixpo/claudeOps.elixpo/output/github-contribution-grid-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/elixpo/claudeOps.elixpo/output/github-contribution-grid-snake.svg" />
+  <img alt="github-snake" src="https://raw.githubusercontent.com/elixpo/claudeOps.elixpo/output/github-contribution-grid-snake-dark.svg" />
 </picture>
 
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=170&section=footer&animation=twinkling" />
